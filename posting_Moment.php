@@ -28,16 +28,16 @@ $postData = file_get_contents('php://input');
 $type = $_POST['type'];
 $user = $_POST['user'];
 $message = $_POST['message'];
-//$datetime = $_POST['datetime'];
-//$tag = $_POST['tag'];
-//$lat = $_POST['lat'];
-//$lng = $_POST['lng'];
-//$tagin = $_POST['tagin'];
-//$arr = explode(",", $tag);
-//$max = count($arr);
-//$barcode =  uniqid();
+$datetime = $_POST['datetime'];
+$tag = $_POST['tag'];
+$lat = $_POST['lat'];
+$lng = $_POST['lng'];
+$tagin = $_POST['tagin'];
+$arr = explode(",", $tag);
+$max = count($arr);
+$barcode =  uniqid();
 
-	/*if($tagin == "true"){
+	if($tagin == "true"){
 	
 		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
 		
@@ -49,9 +49,9 @@ $message = $_POST['message'];
 				$tag = mysqli_query($koneksi, "INSERT INTO tag (idt,idu,status) VALUES ('$idt','$arr[$i]','Delived') ");
 			}	
 		}
-	}*/
-	//else{
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,caption) VALUES('$user','$type','$message') ") or die(mysqli_error());
-	//}
+	}
+	else{
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
+	}
 
 ?>

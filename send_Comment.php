@@ -24,7 +24,7 @@ include 'koneksi.php';
 
 $postData = file_get_contents('php://input');
 
-$cap = mysql_real_escape_string($_POST['cap']); 
+$cap = $_POST['cap']; 
 $nib = $_POST['nib'];
 $idt = $_POST['idt'];
 

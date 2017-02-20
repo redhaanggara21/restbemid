@@ -50,24 +50,40 @@ $barcode =  uniqid();
 			}	
 		}
 		
+			$count = mysqli_affected_rows($koneksi);
+
+			 if ($count > 0) {
+
+				 $codex = "true";
+				 echo json_encode($codex);
+
+			 }
+
+			 else{
+				 $codex = "false";
+				 echo json_encode($codex);
+			 }
+		
 		
 	}
 	else{
 		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
+		
+			$count = mysqli_affected_rows($koneksi);
+
+			 if ($count > 0) {
+
+				 $codex = "true";
+				 echo json_encode($codex);
+
+			 }
+
+			 else{
+				 $codex = "false";
+				 echo json_encode($codex);
+			 }
 	}
 
-	$count = mysqli_affected_rows($koneksi);
 
-	 if ($count > 0) {
-
-		 $codex = "true";
-		 echo json_encode($codex);
-
-	 }
-
-	 else{
-		 $codex = "false";
-		 echo json_encode($codex);
-	 }
 
 ?>

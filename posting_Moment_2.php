@@ -32,7 +32,7 @@ $datetime = $_POST['datetime'];
 $tag = $_POST['tag'];
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
-$tagin = mysql_real_escape_string($_POST['tagin']);
+$tagin = $_POST['tagin'];
 $arr = explode(",", $tag);
 $max = count($arr);
 

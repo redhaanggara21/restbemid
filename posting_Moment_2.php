@@ -27,7 +27,7 @@ $postData = file_get_contents('php://input');
 
 $type = $_POST['type'];
 $user = $_POST['user'];
-$message = mysql_real_escape_string($_POST['message']);
+$message = $_POST['message'];
 $datetime = $_POST['datetime'];
 $tag = $_POST['tag'];
 $lat = $_POST['lat'];

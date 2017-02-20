@@ -35,7 +35,7 @@ $lng = $_POST['lng'];
 //$tagin = $_POST['tagin'];
 //$arr = explode(",", $tag);
 //$max = count($arr);
-$barcode =  uniqid();
+//$barcode =  uniqid();
 
 	/*if($tagin == "true"){
 	
@@ -51,7 +51,7 @@ $barcode =  uniqid();
 		}
 	}*/
 	//else{
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,caption,tanggal,lat,lng) VALUES('$user','$type','$message','$datetime','$lat','$lng') ") or die(mysqli_error());
 	//}
 
 ?>

@@ -28,10 +28,10 @@ $postData = file_get_contents('php://input');
 $type = $_POST['type'];
 $user = $_POST['user'];
 $message = $_POST['message'];
-$datetime = $_POST['datetime'];
-$tag = $_POST['tag'];
-$lat = $_POST['lat'];
-$lng = $_POST['lng'];
+//$datetime = $_POST['datetime'];
+//$tag = $_POST['tag'];
+//$lat = $_POST['lat'];
+//$lng = $_POST['lng'];
 //$tagin = $_POST['tagin'];
 //$arr = explode(",", $tag);
 //$max = count($arr);
@@ -51,7 +51,7 @@ $lng = $_POST['lng'];
 		}
 	}*/
 	//else{
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,caption,tanggal,lat,lng) VALUES('$user','$type','$message','$datetime','$lat','$lng') ") or die(mysqli_error());
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,caption) VALUES('$user','$type','$message') ") or die(mysqli_error());
 	//}
 
 ?>

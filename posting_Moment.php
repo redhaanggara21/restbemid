@@ -49,9 +49,25 @@ $barcode =  uniqid();
 				$tag = mysqli_query($koneksi, "INSERT INTO tag (idt,idu,status) VALUES ('$idt','$arr[$i]','Delived') ");
 			}	
 		}
+		
+		
 	}
 	else{
 		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
 	}
+
+	$count = mysqli_affected_rows($koneksi);
+
+	 if ($count > 0) {
+
+		 $codex = "true";
+		 echo json_encode($codex);
+
+	 }
+
+	 else{
+		 $codex = "false";
+		 echo json_encode($codex);
+	 }
 
 ?>

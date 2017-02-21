@@ -25,19 +25,35 @@ include 'koneksi.php';
 
 $postData = file_get_contents('php://input');
 
-$type = $_POST['type'];
-$user = $_POST['user'];
-$message = $_POST['message'];
-$datetime = $_POST['datetime'];
-$tag = $_POST['tag'];
-$lat = $_POST['lat'];
-$lng = $_POST['lng'];
-$tagin = $_POST['tagin'];
-$arr = explode(",", $tag);
-$max = count($arr);
-$barcode =  uniqid();
+//$type = $_POST['type'];
+//$user = $_POST['user'];
+//$message = $_POST['message'];
+//$datetime = $_POST['datetime'];
+//$tag = $_POST['tag'];
+//$lat = $_POST['lat'];
+//$lng = $_POST['lng'];
+//$tagin = $_POST['tagin'];
+//$arr = explode(",", $tag);
+//$max = count($arr);
+//$barcode =  uniqid();
 
-	if($tagin == "true"){
+$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','eaa','eaa','eaa','eaa','eaa','2.1','2.1') ") or die(mysqli_error());
+		
+			$count = mysqli_affected_rows($koneksi);
+
+			 if ($count > 0) {
+
+				 $codex = "true";
+				 echo json_encode($codex);
+
+			 }
+
+			 else{
+				 $codex = "false";
+				 echo json_encode($codex);
+			 }
+
+	/*if($tagin == "true"){
 	
 		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
 		
@@ -82,7 +98,7 @@ $barcode =  uniqid();
 				 $codex = "false";
 				 echo json_encode($codex);
 			 }
-	}
+	}*/
 
 
 

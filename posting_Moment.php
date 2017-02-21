@@ -37,7 +37,7 @@ $arr = explode(",", $tag);
 $max = count($arr);
 $barcode =  uniqid();
 
-/*$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('eaar','eaa','eaa','eaa','eaa','eaa',2.1,2.1) ") or die(mysqli_error());
+$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('eaar','eaa','eaa','eaa','eaa','eaa',2.1,2.1) ") or die(mysqli_error());
 		
 			$count = mysqli_affected_rows($koneksi);
 
@@ -51,9 +51,9 @@ $barcode =  uniqid();
 			 else{
 				 $codex = "false";
 				 echo json_encode($codex);
-			 }*/
+			 }
 
-	if($tagin == "true"){
+	/*if($tagin == "true"){
 	
 		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
 		
@@ -98,7 +98,7 @@ $barcode =  uniqid();
 				 $codex = "false";
 				 echo json_encode($codex);
 			 }
-	}
+	}*/
 
 
 

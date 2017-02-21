@@ -37,7 +37,7 @@ $postData = file_get_contents('php://input');
 //$max = count($arr);
 //$barcode =  uniqid();
 
-$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','eaa','eaa','eaa','eaa','eaa','2.1','2.1') ") or die(mysqli_error());
+$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('eaar','eaa','eaa','eaa','eaa','eaa','2.1','2.1') ") or die(mysqli_error());
 		
 			$count = mysqli_affected_rows($koneksi);
 

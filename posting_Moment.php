@@ -53,7 +53,7 @@ $barcode =  uniqid();
 		
 	}
 	else {
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','2.4','3.5') ") or die(mysqli_error());
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('xx','xx','false','xx','xx','123456',NULL,NULL) ") or die(mysqli_error());
 		
 	}
 

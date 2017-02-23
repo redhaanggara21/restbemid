@@ -35,7 +35,7 @@ if($tagin == "true"){
 
     if($agenda == "Meeting"){
 
-        $result = mysqli_query($koneksi, "DELETE FROM checkin WHERE idtx = '$idt' ") or die (mysqli_error());
+        $result = mysqli_query($koneksi, "DELETE FROM checkin WHERE idt = '$idt' ") or die (mysqli_error());
 
         $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
     }

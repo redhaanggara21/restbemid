@@ -56,23 +56,24 @@ if($tagin == "true"){
         }
         
         if ($outp != 'empty'){
-           if(unlink('image_timeline/'. $outp)){
-               echo "0";
-            }
+            
+           unlink('image_timeline/'. $outp)
         
-        $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+           $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
 
-    }
+        }
     
 }
-else{
+    
+else    {
 
-      if($agenda == "Meeting"){
+    if($agenda == "Meeting"){
 
         $result = mysqli_query($koneksi, "DELETE FROM checkin WHERE idt = '$idt' ") or die (mysqli_error());
 
         $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
     }
+    
     else{
         
         $result = mysqli_query($koneksi,"SELECT image FROM timeline WHERE idt = '$idt' ") or die(mysqli_error());
@@ -88,14 +89,12 @@ else{
         }
         
         if ($outp != 'empty'){
-           if(unlink('image_timeline/'. $outp)){
-                echo "0";    
-           }
         
+            unlink('image_timeline/'. $outp)
+        
+           $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
 
-        $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
-
-    }
+      }
 
 }
 

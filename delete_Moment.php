@@ -57,8 +57,8 @@ if($tagin == "true"){
         
         if ($outp != 'empty'){
            if(unlink('image_timeline/'. $outp)){
-               
-        }
+               echo "0";
+            }
         
         $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
 
@@ -89,8 +89,8 @@ else{
         
         if ($outp != 'empty'){
            if(unlink('image_timeline/'. $outp)){
-               
-        }
+                echo "0";    
+           }
         
 
         $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());

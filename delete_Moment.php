@@ -43,27 +43,9 @@ if($tagin == "true"){
     }
     else{
         
-        /*$result = mysqli_query($koneksi,"SELECT image FROM timeline WHERE idt = '$idt' ") or die(mysqli_error());
-        
-        while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-             if($rs["image"] == ""){
-                $outp = 'empty';
-             }
-             else{
-                    $outp = ''.$rs['photo'];
-             }
-
-        }
-        
-        if ($outp != 'empty'){
-            
-           unlink('image_timeline/'. $outp)
-        
-           $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
-
-        }*/
         $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
 
+    }
 }
     
 else    {
@@ -77,28 +59,27 @@ else    {
     
     else{
         
-        /*$result = mysqli_query($koneksi,"SELECT image FROM timeline WHERE idt = '$idt' ") or die(mysqli_error());
+            /*$result = mysqli_query($koneksi,"SELECT image FROM timeline WHERE idt = '$idt' ") or die(mysqli_error());
         
-         while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-             if($rs["image"] == ""){
-                $outp = 'empty';
-             }
-             else{
-                    $outp = ''.$rs['photo'];
-             }
+             while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
+                 if($rs["image"] == ""){
+                    $outp = 'empty';
+                 }
+                 else{
+                        $outp = ''.$rs['photo'];
+                 }
 
-        }
+            }
         
-        if ($outp != 'empty'){
+            if ($outp != 'empty'){
+               unlink('image_timeline/'. $outp)
+                $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+             }*/
         
-            unlink('image_timeline/'. $outp)
-        
-           $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
-
-      }*/
          $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
 
-}
+        }
+ }
 
 $count = mysqli_affected_rows($koneksi);
 

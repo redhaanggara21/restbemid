@@ -47,7 +47,7 @@ $max = count($arr);
 			
 
 				if($arr[$i] != $user){
-					$tag = mysqli_query($koneksi, "INSERT INTO tag (idt,idu,status) VALUES ('$idt','$arr[$i]','Delived') ");
+					$tag = mysqli_query($koneksi, "INSERT INTO tag (datein,idt,idu,status) VALUES ('$localDate','$idt','$arr[$i]','Delived') ");
 				}	
 			
 			}

@@ -21,6 +21,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
+include 'date.php';
 
 $postData = file_get_contents('php://input');
 
@@ -28,7 +29,7 @@ $cap = $_POST['cap'];
 $nib = $_POST['nib'];
 $idt = $_POST['idt'];
 
-$result = mysqli_query($koneksi, "INSERT INTO comment (idt,nibc,caption) VALUES('$idt','$nib','$cap') ") or die (mysqli_error());
+$result = mysqli_query($koneksi, "INSERT INTO comment (idt,nibc,caption,tanggal) VALUES('$idt','$nib','$cap','$localDate') ") or die (mysqli_error());
 
 $count = mysqli_affected_rows($koneksi);
  if ($count > 0) {

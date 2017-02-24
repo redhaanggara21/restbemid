@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');
@@ -21,6 +22,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
+include 'date.php';
 
 $postData = file_get_contents('php://input');
 
@@ -28,7 +30,7 @@ $idt = $_POST['idt'];
 $type = $_POST['type']; 
 $nibin = $_POST['nibin'];
 
-$result = mysqli_query($koneksi, "INSERT INTO checkin (idt,type,nibin) VALUES('$idt','$type','$nibin') ") or die (mysqli_error());
+$result = mysqli_query($koneksi, "INSERT INTO checkin (idt,type,nibin,waktu) VALUES('$idt','$type','$nibin','$localDate') ") or die (mysqli_error());
 
 
 ?>

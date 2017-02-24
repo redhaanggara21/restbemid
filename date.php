@@ -1,7 +1,7 @@
 <?php
 
 date_default_timezone_set("Asia/Jakarta");
-$tanggal = date("Y-m-d H:i:s");
-echo "date: ".$tanggal;
+$localDate = date("Y-m-d H:i:s");
+echo "date: ".$localDate;
 
 ?>

@@ -56,10 +56,19 @@ if($tagin == "true"){
             }
         
             if ($outp != 'empty'){
-               unlink('image_timeline/'. $outp);
+                
+               if(unlink('image_timeline/'. $outp)){
+                   
+                    $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+               
+               }
+                
             }
-        
-             $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+            else{
+                
+                   $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+          
+            }
         
     }
 }
@@ -87,11 +96,20 @@ else    {
 
             }
         
-            if ($outp != 'empty'){
-               unlink('image_timeline/'. $outp);
-             }
-        
-           $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+           if ($outp != 'empty'){
+                
+               if(unlink('image_timeline/'. $outp)){
+                   
+                    $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+               
+               }
+                
+            }
+            else{
+                
+                   $result = mysqli_query($koneksi, "DELETE FROM timeline WHERE idt = '$idt' LIMIT 1") or die (mysqli_error());
+          
+            }
 
         }
  }

@@ -22,6 +22,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
+include 'date.php';
 
 $postData = file_get_contents('php://input');
 
@@ -39,7 +40,7 @@ $barcode =  uniqid();
 
 	if($tagin == "true"){
 	
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,tanggal,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$localDate','$barcode','$lat','$lng') ") or die(mysqli_error());
 		
 		$idt = mysqli_insert_id($koneksi);
 
@@ -53,7 +54,7 @@ $barcode =  uniqid();
 		
 	}
 	else {
-		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$barcode','$lat','$lng') ") or die(mysqli_error());
+		$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,barcode,lat,lng) VALUES('$user','$type','$tagin','$message','$datetime','$localDate','$barcode','$lat','$lng') ") or die(mysqli_error());
 		
 	}
 

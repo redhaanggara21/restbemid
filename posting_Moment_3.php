@@ -22,6 +22,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
+include 'date.php';
 
 $postData = file_get_contents('php://input');
 
@@ -47,7 +48,7 @@ if(!empty($_FILES)){
 
 			if($tagin == "true"){
 
-				$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$lat','$lng','$nameFilePathP') ") or die(mysqli_error());
+				$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$localDate','$lat','$lng','$nameFilePathP') ") or die(mysqli_error());
 				
 				$idt = mysqli_insert_id($koneksi);
 				
@@ -61,7 +62,7 @@ if(!empty($_FILES)){
 			}
 			else{
 				
-				$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$lat','$lng','$nameFilePathP') ") or die(mysqli_error());
+				$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$localDate','$lat','$lng','$nameFilePathP') ") or die(mysqli_error());
 			}
 		}
 }

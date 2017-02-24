@@ -51,7 +51,7 @@ if($tagin == "true"){
                     $outp = 'empty';
                  }
                  else{
-                        $outp = ''.$rs['photo'];
+                        $outp = ''.$rs['image'];
                  }
 
             }
@@ -92,7 +92,7 @@ else    {
                     $outp = 'empty';
                  }
                  else{
-                        $outp = ''.$rs['photo'];
+                        $outp = ''.$rs['image'];
                  }
 
             }

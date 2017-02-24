@@ -36,7 +36,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $outp .= '"idt":"'                       . $rs["idt"]                        . '",';
 
-    $outp .= '"nib":"'                       . $rs["nibc"]                       . '",';
+    $outp .= '"nibc":"'                       . $rs["nibc"]                       . '",';
 
     $outp .= '"caption":"'                       . $rs["caption"]                       . '",';
 

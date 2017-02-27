@@ -12,12 +12,11 @@ $nama =  $_FILES['file']['name'];
 
 if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
 
-	$sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('xx','Meeting', 'false','masuk bos','blmfix','$localDate','xxx','xxx','$nama') ") or die(mysqli_error());
+    $sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('xx','Meeting', 'false','masukbos','blmfix','$localDate','xxx','xxx','$nama') ") or die(mysqli_error());
 
     echo "Upload and move success";
 }
  else{
-echo $target_path;
     echo "There was an error uploading the file, please try again!";
 }
 

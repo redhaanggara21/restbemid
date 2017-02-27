@@ -31,14 +31,16 @@ if(move_uploaded_file($tmpFilePathP, $filePathP)) {
     $sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('xx','Meeting', 'false','masukbos','blmfix','$localDate','xxx','xxx','$nameFilePathP') ") or die(mysqli_error());
 
     $codex = $nameFilePath;
+    echo json_encode($codex);
+    
 }
 
  else{
 
      $codex = "false";
+     echo json_encode($codex);
  	   
 }
 
-echo json_encode($codex);
 
 ?>

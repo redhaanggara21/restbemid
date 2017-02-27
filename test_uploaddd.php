@@ -30,17 +30,15 @@ if(move_uploaded_file($tmpFilePathP, $filePathP)) {
 
     $sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('xx','Meeting', 'false','masukbos','blmfix','$localDate','xxx','xxx','$nameFilePathP') ") or die(mysqli_error());
     
-    $outp .= '{"feedback":"'                       . $nameFilePath                        . '"}';
-    $outp ='{"records":['.$outp.']}';
-    echo ($outp);
+     $codex = "true";
+     echo json_encode($codex);
     
 }
 
  else{
      
-     $outp .= '{"feedback":"'                       . "false"                       . '"}';
-     $outp ='{"records":['.$outp.']}';
- 	 echo ($outp);
+     $codex = "false";
+     echo json_encode($codex);
      
 }
 

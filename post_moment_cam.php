@@ -27,21 +27,31 @@ include 'date.php';
 $postData = file_get_contents('php://input');
 
 $type = $_POST['type'];
+
 $user = $_POST['user'];
+
 $message = $_POST['message'];
+
 $datetime = $_POST['datetime'];
+
 $tag = $_POST['tag'];
+
 $lat = $_POST['lat'];
+
 $lng = $_POST['lng'];
-$namemage = $_POST['image];
+
+$namemage = $_POST['image'];
+
 $tagin = $_POST['tagin'];
+
 $arr = explode(",", $tag);
+
 $max = count($arr);
 
 
 if($tagin == "true")	{
 
-	 $sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' , lat = '$lat', lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());
+	 $sql= mysqli_query($koneksi, " UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' , lat = '$lat', lng = '$lng' WHERE image = '$namemage' ) ") or die(mysqli_error());
 				
 	 $idt = mysqli_affected_rows($koneksi);
 				

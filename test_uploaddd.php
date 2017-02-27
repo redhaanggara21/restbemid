@@ -25,7 +25,7 @@ include 'koneksi.php';
 
 $postData = file_get_contents('php://input');
 
-$target_path = "test_upload/";
+$target_path = "image_timeline/";
  
 $target_path = $target_path . basename( $_FILES['file']['name']);
  

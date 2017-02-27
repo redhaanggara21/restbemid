@@ -39,26 +39,27 @@ $arr = explode(",", $tag);
 $max = count($arr);
 
 
-			if($tagin == "true"){
+if($tagin == "true")	{
 
-				$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' , lat = '$lat', lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());
+	 $sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' , lat = '$lat', lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());
 				
-				$idt = mysqli_affected_rows($koneksi);
+	 $idt = mysqli_affected_rows($koneksi);
 				
-				for ($i=0; $i < $max; $i++) { 
+		for ($i=0; $i < $max; $i++) { 
 				
-						if($arr[$i] != $user){
-							$tag = mysqli_query($koneksi, "INSERT INTO tag (datein,idt,idu,status) VALUES ('$localDate','$idt','$arr[$i]','Delived') ");
-						}	
+			if($arr[$i] != $user){
 				
-				}
-			}
+				$tag = mysqli_query($koneksi, "INSERT INTO tag (datein,idt,idu,status) VALUES ('$localDate','$idt','$arr[$i]','Delived') ");
+			}	
+				
+		}
+}
       
-			else{
+else	{
 				
-				$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' ,lat = '$lat',lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());		
+	$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' ,lat = '$lat',lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());		
      
-     }
+}
 
 
 			

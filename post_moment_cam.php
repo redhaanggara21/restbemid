@@ -48,12 +48,14 @@ $arr = explode(",", $tag);
 
 $max = count($arr);
 
+$idt = "";
+
 
 if($tagin == "true")	{
 
-	 $sql= mysqli_query($koneksi, " UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', lat = '$lat', lng = '$lng' WHERE image = '$namemage' ) ") or die(mysqli_error());
+	 $sql= mysqli_query($koneksi, " INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$localDate','$lat','$lng','$namemage') ") or die(mysqli_error());
 				
-	 $idt = mysqli_affected_rows($koneksi);
+	 $idt = mysqli_insert_id($koneksi);
 				
 		for ($i=0; $i < $max; $i++) { 
 				
@@ -67,10 +69,11 @@ if($tagin == "true")	{
       
 else	{
 				
-	$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', lat = '$lat',lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());		
-     
+	$sql= mysqli_query($koneksi, " INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('$user','$type', '$tagin','$message','$datetime','$localDate','$lat','$lng','$namemage') ") or die(mysqli_error());		
+     	$idt = mysqli_insert_id($koneksi);
 }
 
 
+echo json_encode($idt);
 			
 ?>

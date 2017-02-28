@@ -23,13 +23,11 @@ include 'date.php';
 $tmpFilePathP = $_FILES['file']['tmp_name'];
 $nameFilePathP = $_FILES['file']['name'];
 $filePathP = "image_timeline/" .$nameFilePathP;
-$outp = "";
+$codex = "";
  
 
 if(move_uploaded_file($tmpFilePathP, $filePathP)) {
 
-    $sql= mysqli_query($koneksi, "INSERT INTO timeline (idunib,agenda,tagin,caption,tanggal,waktu,lat,lng,image) VALUES('10-01-01-02','Attention', 'false','masukbos','blmfix','$localDate','xxx','xxx','$nameFilePathP') ") or die(mysqli_error());
-    
      $codex = "true";
      echo json_encode($codex);
     

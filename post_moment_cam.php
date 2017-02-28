@@ -51,7 +51,7 @@ $max = count($arr);
 
 if($tagin == "true")	{
 
-	 $sql= mysqli_query($koneksi, " UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' , lat = '$lat', lng = '$lng' WHERE image = '$namemage' ) ") or die(mysqli_error());
+	 $sql= mysqli_query($koneksi, " UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', lat = '$lat', lng = '$lng' WHERE image = '$namemage' ) ") or die(mysqli_error());
 				
 	 $idt = mysqli_affected_rows($koneksi);
 				
@@ -67,7 +67,7 @@ if($tagin == "true")	{
       
 else	{
 				
-	$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', waktu = '$localDate' ,lat = '$lat',lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());		
+	$sql= mysqli_query($koneksi, "UPDATE timeline SET idunib = '$user', agenda = '$type', tagin = '$tagin', caption = '$message', tanggal = '$datetime', lat = '$lat',lng = '$lng' WHERE image = '$namemage') ") or die(mysqli_error());		
      
 }
 

@@ -35,7 +35,7 @@ $result = mysqli_query($koneksi,"SELECT COUNT(*) FROM lokasi WHERE niblo = '$nib
 	
 	if ($count > 0) {
 
-		$result = mysqli_query($koneksi,"UPDATE user SET lat = '$lat', lng = '$lng', datetime = '$localDate' WHERE niblo = '$nib'") or die(mysqli_error());
+		$result = mysqli_query($koneksi,"UPDATE lokasi SET lat = '$lat', lng = '$lng', datetime = '$localDate' WHERE niblo = '$nib'") or die(mysqli_error());
 
 	}
 	else{

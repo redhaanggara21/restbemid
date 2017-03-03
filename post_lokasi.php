@@ -29,7 +29,7 @@ $nib = $_POST['nib'];
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 
-$result = mysqli_query($koneksi,"SELECT FROM lokasi WHERE niblo = '$nib' ") or die(mysqli_error());
+$result = mysqli_query($koneksi,"SELECT * FROM lokasi WHERE niblo = '$nib' ") or die(mysqli_error());
 $count = mysqli_num_rows($result);
 	
 	if ($count == 0){

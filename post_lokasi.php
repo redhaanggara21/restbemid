@@ -29,19 +29,19 @@ $nib = $_POST['nib'];
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 
-$result = mysqli_query($koneksi,"SELECT COUNT(*) FROM lokasi WHERE niblo = '$nib' ") or die(mysqli_error());
-
-	$count = mysqli_num_rows($result);
+$result = mysqli_query($koneksi,"SELECT FROM lokasi WHERE niblo = '$nib' ") or die(mysqli_error());
+$count = mysqli_num_rows($result);
 	
-	if ($count > 0) {
-
-		$result = mysqli_query($koneksi,"UPDATE lokasi SET lat = '$lat', lng = '$lng', datetime = '$localDate' WHERE niblo = '$nib'") or die(mysqli_error());
-
-	}
-	else if ($count == 0){
+	if ($count == 0){
 
 		$ress = mysqli_query($koneksi, " INSERT INTO lokasi (niblo, lat, lng, datetime) VALUES ('$nib', '$lat', '$lng', '$localDate') ") or die(mysqli_error());
 
 	}
+	else if ($count > 0) {
+
+		$ress = mysqli_query($koneksi,"UPDATE lokasi SET lat = '$lat', lng = '$lng', datetime = '$localDate' WHERE niblo = '$nib'") or die(mysqli_error());
+
+	}
+	
 
 ?>

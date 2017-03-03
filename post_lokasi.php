@@ -38,9 +38,9 @@ $result = mysqli_query($koneksi,"SELECT COUNT(*) FROM lokasi WHERE niblo = '$nib
 		$result = mysqli_query($koneksi,"UPDATE lokasi SET lat = '$lat', lng = '$lng', datetime = '$localDate' WHERE niblo = '$nib'") or die(mysqli_error());
 
 	}
-	else if ($count <= 0){
+	else if ($count == 0){
 
-		$result = mysqli_query($koneksi, "INSERT INTO lokasi (niblo,lat,lng,datetime) VALUES ('$nib','$lat','$lng','$localDate') ") or die(mysqli_error());
+		$ress = mysqli_query($koneksi, " INSERT INTO lokasi (niblo, lat, lng, datetime) VALUES ('$nib', '$lat', '$lng', '$localDate') ") or die(mysqli_error());
 
 	}
 

@@ -31,7 +31,7 @@ $lng = $_POST['lng'];
 
 $result = mysqli_query($koneksi,"SELECT COUNT(*) FROM lokasi WHERE niblo = '$nib' ") or die(mysqli_error());
 
-	$count = $result->fetch_row();
+	$count = mysqli_num_rows($result);
 	
 	if ($count > 0) {
 

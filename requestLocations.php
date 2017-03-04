@@ -23,7 +23,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
 
-$result = mysqli_query($koneksi,"SELECT * FROM lokasi ") or die(mysqli_error());
+$result = mysqli_query($koneksi,"SELECT lokasi.*,user.* FROM lokasi,user WHERE lokasi.niblo = user.nib ") or die(mysqli_error());
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -34,6 +34,10 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"lat":"'                       . $rs["lat"]                        . '",';
     
     $outp .= '"lng":"'                       . $rs["lng"]                        . '",';
+    
+    $outp .= '"nama":"'                       . $rs["nama"]                        . '",';
+    
+    $outp .= '"dinas":"'                       . $rs["dinas"]                        . '",';
 
     $outp .= '"datetime":"'                       . $rs["datetime"]                       . '"}';
 

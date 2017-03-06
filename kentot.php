@@ -39,8 +39,8 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
      while( $rss = $result2->fetch_array(MYSQLI_ASSOC) ){
 
-            $outp .= '{"nib":"'                       . $rs["nib"]                        . '",';
-            $outp .= '"waktu":"'                       . $rs["waktu"]                        . '"}';
+            $outp .= '{"nib":"'                       . $rss["nib"]                        . '",';
+            $outp .= '"waktu":"'                       . $rss["waktu"]                        . '"}';
 
      }
     

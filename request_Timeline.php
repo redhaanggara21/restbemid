@@ -23,7 +23,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
 
-$result = mysqli_query($koneksi,"SELECT timeline.* , user.*, checkin.* FROM timeline,user,checkin WHERE timeline.idunib = user.nib AND checkin.idt = timeline.idt ORDER BY idt DESC ") or die(mysqli_error());
+$result = mysqli_query($koneksi,"SELECT timeline.* , user.* FROM timeline,user,checkin WHERE timeline.idunib = user.nib ORDER BY idt DESC ") or die(mysqli_error());
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -52,7 +52,6 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $outp .= '"nama":"'                       . $rs["nama"]                       . '",';
     
-    $outp .= '"nibin":"'                       . $rs["nibin"]                       . '",';
 
 
 

@@ -52,6 +52,16 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
             $outp .= '"dp":"'                       . $rs["photo"]                       . '"}';
      }
 }
-$outp ='{"records":['.$outp.']}';
-echo($outp);
+
+$arrayDateAndMachine = array( 
+    array(1999, 3.0), 
+    array(2000, 3.9),
+);
+
+$arr = array(
+              "recordsData" => $outp, 
+             );
+
+
+echo json_encode($arr);
 ?>

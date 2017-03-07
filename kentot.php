@@ -16,8 +16,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include 'koneksi.php';
 $result = mysqli_query($koneksi,"SELECT timeline.* , user.* FROM timeline,user WHERE timeline.idunib = user.nib ORDER BY idt DESC ") or die(mysqli_error());
-$outp = "";
-$outp2="";
+$outp = array();
 
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 

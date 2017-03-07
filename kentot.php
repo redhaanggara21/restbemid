@@ -16,7 +16,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include 'koneksi.php';
 $result = mysqli_query($koneksi,"SELECT timeline.* , user.* FROM timeline,user WHERE timeline.idunib = user.nib ORDER BY idt DESC ") or die(mysqli_error());
-$outp = array();
+$outp = "";
+$arrayDateAndMachine = array();
 
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
@@ -34,12 +35,11 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"image":"'                       . $rs["image"]                       . '",';
     $outp .= '"nama":"'                       . $rs["nama"]                       . '",';
     
-   $result2 = mysqli_query($koneksi,"SELECT chekin.* FROM checkin WHERE checkin.idt = '".$rs["idt"]."'  ") or die(mysqli_error());
+   $result2 = mysqli_query($koneksi,"SELECT chekin.* FROM checkin WHERE checkin.idt = '$rs['idt']'  ") or die(mysqli_error());
 
      while( $rss = $result2->fetch_array(MYSQLI_ASSOC) ){
 
-            $outp .= '{"nibin":"'                       . $rss["nibin"]                        . '",';
-            $outp .= '"waktu":"'                       . $rss["waktu"]                        . '"}';
+          $outp .= '"checkin":{"'                       . $rs["nibin"]                       . '"}';
 
      }
     

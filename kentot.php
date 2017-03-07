@@ -54,11 +54,14 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
     $outp2 .= '"waktu":"'                       . $rss["waktu"]                       . '"}';
 }
 
-$arr = array(
+/*$arr = array(
               "recordsData" => $outp,
               "recordsData.checkin" => $outp2
-             );
+             );*/
+ foreach ($outp as $vaue){
+    echo $value;
+ }
 
-echo json_encode($arr);
+//echo json_encode($arr);
 
 ?>

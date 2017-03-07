@@ -56,7 +56,7 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
 
 $arr = array(
               "recordsData" => $outp,
-              "checkin" => $outp2
+              "recordsData.checkin" => $outp2
              );
 
 echo json_encode($arr);

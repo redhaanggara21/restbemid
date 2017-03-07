@@ -58,7 +58,9 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
               "recordsData" => $outp,
               "recordsData.checkin" => $outp2
              );*/
- foreach ($outp as $vaue){
+ $ty = json_encode($outp);
+
+ foreach ($obj as $vaue){
     echo $value;
  }
 

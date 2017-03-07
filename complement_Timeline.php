@@ -23,7 +23,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
 
-$nib = "10-01-01-02";
+$nib = $_POST['nib'];
+
 $result = mysqli_query($koneksi, "SELECT * FROM checkin WHERE nibin = '$nib' ") or die(mysqli_error());
 
 $outp = "";

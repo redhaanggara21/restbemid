@@ -17,7 +17,6 @@ header("Content-Type: application/json; charset=UTF-8");
 include 'koneksi.php';
 $result = mysqli_query($koneksi,"SELECT timeline.* , user.* FROM timeline,user WHERE timeline.idunib = user.nib ORDER BY idt DESC ") or die(mysqli_error());
 $outp = "";
-$arrayDateAndMachine = array();
 
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
@@ -45,10 +44,22 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
      }
 }
 
+$result2 = mysqli_query($koneksi,"SELECT timeline.* , checkin.* FROM timeline,checkin WHERE timeine.idt = checkin.idt ORDER BY idt DESC ") or die(mysqli_error());
+$outp2 = "";
+
+while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
+
+    if ($outp2 != "") {$outp2 .= ",";}
+    $outp2 .= '{"idt":"'                       . $rss["idt"]                        . '",';
+    $outp .= '"nibin":"'                       . $rss["nibin"]                        . '",';
+    $outp2 .= '"waktu":"'                       . $rss["waktu"]                       . '"}';
+}
+
 $arr = array(
               "recordsData" => $outp, 
+              "checkin" => $outp2
              );
 
-
 echo json_encode($arr);
+
 ?>

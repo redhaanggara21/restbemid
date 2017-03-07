@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');
@@ -12,9 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
         header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
     exit(0);
 }
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include 'koneksi.php';
+
 $result = mysqli_query($koneksi,"SELECT timeline.* , user.* FROM timeline,user WHERE timeline.idunib = user.nib ORDER BY idt DESC ") or die(mysqli_error());
 $outp = "";
 
@@ -52,20 +55,15 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
     $outp2 .= '{"idt":"'                       . $rss["idt"]                        . '",';
     $outp2 .= '"nibin":"'                       . $rss["nibin"]                        . '",';
     $outp2 .= '"waktu":"'                       . $rss["waktu"]                       . '"}';
+    
 }
 
-/*$arr = array(
+$arr = array(
               "recordsData" => $outp,
               "recordsData.checkin" => $outp2
-             );*/
- $obj = json_encode($outp);
+    
+             );
 
- foreach ($obj as $value){
-     
-    echo $value;
- 
- }
-
-//echo json_encode($arr);
+echo json_encode($arr);
 
 ?>

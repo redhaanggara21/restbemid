@@ -43,7 +43,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
      }
 }
 
-$result2 = mysqli_query($koneksi,"SELECT timeline.* , checkin.* FROM timeline,checkin WHERE timeine.idt = checkin.idt ORDER BY idt DESC ") or die(mysqli_error());
+$result2 = mysqli_query($koneksi,"SELECT timeline.* , checkin.* FROM timeline,checkin WHERE timeline.idt = checkin.idt ORDER BY idt DESC ") or die(mysqli_error());
 $outp2 = "";
 
 while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {

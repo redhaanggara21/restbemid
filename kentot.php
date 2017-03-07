@@ -35,15 +35,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"image":"'                       . $rs["image"]                       . '",';
     $outp .= '"nama":"'                       . $rs["nama"]                       . '",';
     
-   $result2 = mysqli_query($koneksi,"SELECT chekin.* FROM checkin WHERE checkin.idt = '$rs['idt']'  ") or die(mysqli_error());
 
-     while( $rss = $result2->fetch_array(MYSQLI_ASSOC) ){
-
-         $outp .= '"checkin":[{"' 
-                          "nibin:" .$rss["nibin"].
-                      '"}]'
-
-     }
     
      if($rs["photo"] == ""){
         $outp .= '"dp":"'                       . "nodp.png"                       . '"}';
@@ -52,11 +44,6 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
             $outp .= '"dp":"'                       . $rs["photo"]                       . '"}';
      }
 }
-
-$arrayDateAndMachine = array( 
-    array(1999, 3.0), 
-    array(2000, 3.9),
-);
 
 $arr = array(
               "recordsData" => $outp, 

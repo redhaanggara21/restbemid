@@ -43,7 +43,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
      }
 }
 
-/*$result2 = mysqli_query($koneksi,"SELECT timeline.* , checkin.* FROM timeline,checkin WHERE timeline.idt = checkin.idt ORDER BY idt DESC ") or die(mysqli_error());
+$result2 = mysqli_query($koneksi,"SELECT timeline.* , checkin.* FROM timeline, checkin WHERE timeline.idt = checkin.idt ORDER BY timeline.idt DESC ") or die(mysqli_error());
 $outp2 = "";
 
 while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
@@ -52,11 +52,11 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
     $outp2 .= '{"idt":"'                       . $rss["idt"]                        . '",';
     $outp2 .= '"nibin":"'                       . $rss["nibin"]                        . '",';
     $outp2 .= '"waktu":"'                       . $rss["waktu"]                       . '"}';
-}*/
+}
 
 $arr = array(
-              "recordsData" => $outp
-              //"checkin" => $outp2
+              "recordsData" => $outp,
+              "checkin" => $outp2
              );
 
 echo json_encode($arr);

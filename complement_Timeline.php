@@ -23,7 +23,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
 
-$result = mysqli_query($koneksi, "SELECT timeline.*, checkin.* FROM timeline,checkin WHERE timeline.idt = checkin.idt ") or die(mysqli_error());
+$nib = "10-01-01-02";
+$result = mysqli_query($koneksi, "SELECT checkin.* FROM timeline,checkin WHERE checkin.idt = '$nib' ") or die(mysqli_error());
 
 $outp = "";
 

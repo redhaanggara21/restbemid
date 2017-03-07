@@ -35,7 +35,6 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"nama":"'                       . $rs["nama"]                       . '",';
     
 
-    
      if($rs["photo"] == ""){
         $outp .= '"dp":"'                       . "nodp.png"                       . '"}';
      }
@@ -51,13 +50,13 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
 
     if ($outp2 != "") {$outp2 .= ",";}
     $outp2 .= '{"idt":"'                       . $rss["idt"]                        . '",';
-    $outp .= '"nibin":"'                       . $rss["nibin"]                        . '",';
+    $outp2 .= '"nibin":"'                       . $rss["nibin"]                        . '",';
     $outp2 .= '"waktu":"'                       . $rss["waktu"]                       . '"}';
 }
 
 $arr = array(
               "recordsData" => $outp, 
-             // "checkin" => $outp2
+              "checkin" => $outp2
              );
 
 echo json_encode($arr);

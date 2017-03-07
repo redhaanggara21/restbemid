@@ -60,8 +60,10 @@ while($rss = $result2->fetch_array(MYSQLI_ASSOC)) {
              );*/
  $ty = json_encode($outp);
 
- foreach ($obj as $vaue){
+ foreach ($obj as $value){
+     
     echo $value;
+ 
  }
 
 //echo json_encode($arr);

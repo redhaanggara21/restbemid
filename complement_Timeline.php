@@ -25,7 +25,7 @@ include 'koneksi.php';
 
 $nib = $_POST['nib'];
 
-$result = mysqli_query($koneksi, "SELECT * FROM checkin WHERE nibin = '$nib' ") or die(mysqli_error());
+$result = mysqli_query($koneksi, "SELECT * FROM checkin WHERE nibin = '$nib' ORDER BY idt DESC") or die(mysqli_error());
 
 $outp = "";
 

@@ -30,7 +30,23 @@ $idt = $_POST['idt'];
 $type = $_POST['type']; 
 $nibin = $_POST['nibin'];
 
-$result = mysqli_query($koneksi, "INSERT INTO checkin (idt,type,nibin,waktu) VALUES('$idt','$type','$nibin','$localDate') ") or die (mysqli_error());
+$result = mysqli_query($koneksi, "SELECT * FROM checkin WHERE idt = '$idt' AND nibin = '$nibin' ") or die (mysqli_error());
+$num_rows = mysqli_num_rows($result);
+
+if($num_rows <= 0){
+    
+    $result = mysqli_query($koneksi, "INSERT INTO checkin (idt,type,nibin,waktu) VALUES('$idt','$type','$nibin','$localDate') ") or die (mysqli_error());
+    
+    $codex = "true";
+ 	echo json_encode($codex);
+    
+}
+else{
+    
+    $codex = "false";
+ 	echo json_encode($codex);
+
+}
 
 
 ?>

@@ -25,7 +25,7 @@ $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
     
-    outp .= '{"niblo":"'                       . $rs["niblo"]                        . '",';
+    $outp .= '{"niblo":"'                       . $rs["niblo"]                        . '",';
     $outp .= '"lat":"'                       . $rs["lat"]                        . '",';
     $outp .= '"lng":"'                       . $rs["lng"]                        . '",';
     $outp .= '"datetime":"'                       . $rs["datetime"]                        . '"}';

@@ -20,9 +20,8 @@ include 'koneksi.php';
 
 $postData = file_get_contents('php://input');
 
-$ket = $_POST['ket'];
 
-$result = mysqli_query($koneksi, " SELECT * FROM api WHERE keterangan = '$keterangan'") or die(mysqli_error());
+$result = mysqli_query($koneksi, " SELECT * FROM api ") or die(mysqli_error());
 
 
  	$outp = "";

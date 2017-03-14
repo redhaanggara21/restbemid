@@ -20,7 +20,8 @@ $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
 
-    $outp .= '{"bulan":"'                       . $rs["bulan"]                        . '",';
+    $outp .= '{"id":"'                       . $rs["id"]                        . '",';
+    $outp .= '"bulan":"'                       . $rs["bulan"]                       . '",'; 
     $outp .= '"nibtm":"'                       . $rs["nibtm"]                       . '",';
     $outp .= '"caption":"'                       . $rs["caption"]                       . '",';
 

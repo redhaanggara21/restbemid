@@ -22,15 +22,6 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
-$i=0;
-
-$result1 = mysqli_query($koneksi, "DELETE FROM checkin") or die (mysqli_error());
-
-if($result1){
-  $result2 = mysqli_query($koneksi, "DELETE FROM tag") or die (mysqli_error());
-    if ($result2) {
-      $result3 = mysqli_query($koneksi, "DELETE FROM comment") or die (mysqli_error());
-      if ($result3) {
 
         $result = mysqli_query($koneksi,"SELECT FROM timeline") or die(mysqli_error());
           
@@ -42,13 +33,28 @@ if($result1){
 
                       if(unlink('image_timeline/'. $outp)){
                        
-                         echo $i++;
+                         echo "enter/";
                          
                       }
 
                  }
             }
-      }
+
+
+$result1 = mysqli_query($koneksi, "DELETE FROM checkin") or die (mysqli_error());
+
+if($result1){
+    
+  $result2 = mysqli_query($koneksi, "DELETE FROM tag") or die (mysqli_error());
+    
+    if ($result2) {
+        
+      $result3 = mysqli_query($koneksi, "DELETE FROM comment") or die (mysqli_error());
+        
+        if ($result3) {
+
+
+          }
     }
 }
 

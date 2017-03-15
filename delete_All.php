@@ -23,7 +23,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 include 'koneksi.php';
 
-        $result = mysqli_query($koneksi,"SELECT FROM timeline") or die(mysqli_error());
+        $result = mysqli_query($koneksi,"SELECT * FROM timeline") or die(mysqli_error());
           
            while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 
@@ -51,8 +51,9 @@ if($result1){
       $result3 = mysqli_query($koneksi, "DELETE FROM comment") or die (mysqli_error());
         
         if ($result3) {
-
-
+                          
+              $rt = mysqli_query($koneksi,"DELETE FROM timeline") or die(mysqli_error());
+            
           }
     }
 }

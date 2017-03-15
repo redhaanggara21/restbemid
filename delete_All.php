@@ -29,14 +29,13 @@ include 'koneksi.php';
 
                  if($rs["image"] != "" || $rs["image"] != NULL){
                     
-                     $outp = ''.$rs['image'];
+                     //$outp = ''.$rs['image'];
 
-                      if(unlink('image_timeline/'. $outp)){
+                      if(unlink('image_timeline/'. $rs['image'])){
                        
                          echo "enter/";
                          
                       }
-
                  }
             }
 

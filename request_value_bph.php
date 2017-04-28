@@ -28,7 +28,7 @@ $nib = $_POST['nib'];
 
 
 
-$result = mysqli_query($koneksi, "SELECT * FROM value_personality WHERE posisi = 'bph' AND nib='$nib' ORDEY BY bulan DESC") or die(mysqli_error());
+$result = mysqli_query($koneksi, "SELECT * FROM value_personality WHERE posisi = 'bph' AND nib='$nib'") or die(mysqli_error());
 
 $outp = "";
 
